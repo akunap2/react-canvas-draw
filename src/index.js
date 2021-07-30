@@ -68,12 +68,12 @@ export default class extends PureComponent {
     onChange: null,
     loadTimeOffset: 5,
     lazyRadius: 12,
-    brushRadius: 10,
-    brushColor: "#444",
+    brushRadius: 2,
+    brushColor: "black",
     catenaryColor: "#0a0302",
     gridColor: "rgba(150,150,150,0.17)",
     backgroundColor: "#00000000",
-    hideGrid: false,
+    hideGrid: true,
     canvasWidth: 400,
     canvasHeight: 400,
     disabled: false,
@@ -486,7 +486,7 @@ export default class extends PureComponent {
   };
 
   drawGrid = (ctx) => {
-    // if (this.props.hideGrid) return;
+    if (this.props.hideGrid) return;
 
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 

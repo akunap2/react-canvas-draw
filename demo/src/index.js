@@ -10,19 +10,19 @@ class Demo extends Component {
     width: 400,
     height: 400,
     brushRadius: 10,
-    lazyRadius: 12
+    lazyRadius: 12,
   };
   componentDidMount() {
     // let's change the color randomly every 2 seconds. fun!
     window.setInterval(() => {
       this.setState({
-        color: "#" + Math.floor(Math.random() * 16777215).toString(16)
+        color: "#" + Math.floor(Math.random() * 16777215).toString(16),
       });
     }, 2000);
   }
   render() {
     return (
-      <div>
+      <div style={{ backgroundColor: "blue" }}>
         <h1>React Canvas Draw</h1>
         <iframe
           title="GitHub link"
@@ -54,7 +54,7 @@ class Demo extends Component {
               width: "24px",
               height: "24px",
               backgroundColor: this.state.color,
-              border: "1px solid #272727"
+              border: "1px solid #272727",
             }}
           />
         </div>
@@ -70,7 +70,10 @@ class Demo extends Component {
           imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/a1/Nepalese_Mhapuja_Mandala.jpg"
         />
         <h2>Hide UI</h2>
-        <p>To hide the UI elements, set the `hideInterface` prop. You can also hide the grid with the `hideGrid` prop.</p>
+        <p>
+          To hide the UI elements, set the `hideInterface` prop. You can also
+          hide the grid with the `hideGrid` prop.
+        </p>
         <CanvasDraw hideInterface hideGrid />
         <h2>Save & Load</h2>
         <p>
@@ -111,7 +114,7 @@ class Demo extends Component {
             <input
               type="number"
               value={this.state.width}
-              onChange={e =>
+              onChange={(e) =>
                 this.setState({ width: parseInt(e.target.value, 10) })
               }
             />
@@ -121,7 +124,7 @@ class Demo extends Component {
             <input
               type="number"
               value={this.state.height}
-              onChange={e =>
+              onChange={(e) =>
                 this.setState({ height: parseInt(e.target.value, 10) })
               }
             />
@@ -131,7 +134,7 @@ class Demo extends Component {
             <input
               type="number"
               value={this.state.brushRadius}
-              onChange={e =>
+              onChange={(e) =>
                 this.setState({ brushRadius: parseInt(e.target.value, 10) })
               }
             />
@@ -141,14 +144,14 @@ class Demo extends Component {
             <input
               type="number"
               value={this.state.lazyRadius}
-              onChange={e =>
+              onChange={(e) =>
                 this.setState({ lazyRadius: parseInt(e.target.value, 10) })
               }
             />
           </div>
         </div>
         <CanvasDraw
-          ref={canvasDraw => (this.saveableCanvas = canvasDraw)}
+          ref={(canvasDraw) => (this.saveableCanvas = canvasDraw)}
           brushColor={this.state.color}
           brushRadius={this.state.brushRadius}
           lazyRadius={this.state.lazyRadius}
@@ -173,7 +176,7 @@ class Demo extends Component {
         <CanvasDraw
           disabled
           hideGrid
-          ref={canvasDraw => (this.loadableCanvas = canvasDraw)}
+          ref={(canvasDraw) => (this.loadableCanvas = canvasDraw)}
           saveData={localStorage.getItem("savedDrawing")}
         />
         <p>
