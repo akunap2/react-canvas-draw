@@ -17,7 +17,7 @@ function midPointBtw(p1, p2) {
 const canvasStyle = {
   display: "block",
   position: "absolute",
-  backgroundColor: "red",
+  backgroundColor: "#00000000",
 };
 
 const canvasTypes = [
@@ -72,7 +72,7 @@ export default class extends PureComponent {
     brushColor: "#444",
     catenaryColor: "#0a0302",
     gridColor: "rgba(150,150,150,0.17)",
-    backgroundColor: "#FFF",
+    backgroundColor: "#00000000",
     hideGrid: false,
     canvasWidth: 400,
     canvasHeight: 400,
